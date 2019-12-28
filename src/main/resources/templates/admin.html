@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All sign ups</title>
+</head>
+<body>
+
+<h1>People who have signed up!</h1>
+
+<ul>
+    <li th:each="item : ${list}">
+        <span th:utext="${item.name}">!</span>
+        <span th:utext="${item.address}">!</span>
+        <form action="#" th:action="@{/admin_signups/{id}(id=${item.id})}" method="POST">
+            <p><input type="submit" value="Remove" /></p>
+        </form>
+    </li>
+</ul>
+
+</body>
+</html>
