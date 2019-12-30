@@ -51,12 +51,10 @@ public class SignupController {
     @RequestMapping(value = "/admin_signups", method = RequestMethod.POST)
     public String adminForm(String name, String password) {
         if (name.equals("admin") && password.equals("1234")) {
-            return  "admin";
+            return  "redirect:/admin_signups";
         } else {
             return "form";
         }
     }
 
-
 }
-
